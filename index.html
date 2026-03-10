@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Parhap Printing LLC – Professional Print Services</title>
+<meta name="description" content="Parhap Printing LLC – professional printing services: document printing, business cards, marketing materials, signs, banners, decals, and promotional products."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --or1:#e8593a;
+  --or2:#f07a56;
+  --or3:#fde8e1;
+  --sv1:#b2bac4;
+  --sv2:#d9e0e8;
+  --sv3:#6e7a87;
+  --ink:#181b1f;
+  --white:#fff;
+  --bg:#f7f4f0;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;object-fit:cover}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:66px;border-bottom:3px solid var(--or1)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.07em;color:var(--white)}
+.logo span{color:var(--or1)}
+.navul{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.navul a{color:var(--sv1);font-size:.76rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;transition:color .2s}
+.navul a:hover{color:var(--or2)}
+.navcta{background:var(--or1)!important;color:var(--white)!important;padding:.44rem 1.3rem;border-radius:3px;transition:background .2s!important}
+.navcta:hover{background:var(--or2)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:var(--sv1)}
+.mmenu{display:none;position:fixed;top:66px;left:0;right:0;background:var(--ink);border-top:1px solid #242424;flex-direction:column;padding:1.5rem 5vw;gap:1.3rem;z-index:998}
+.mmenu a{color:var(--sv1);font-size:.9rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.mmenu.open{display:flex}
+@media(max-width:900px){.navul{display:none}.burger{display:flex}}
+
+/* HERO */
+#hero{min-height:100vh;background:var(--ink);display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 5vw 60px;gap:4rem;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border:110px solid var(--or1);border-radius:50%;opacity:.07;pointer-events:none}
+#hero::after{content:'';position:absolute;bottom:-80px;left:42%;width:350px;height:350px;border:70px solid var(--sv1);border-radius:50%;opacity:.05;pointer-events:none}
+.hero-left{position:relative;z-index:2}
+.h-tag{font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--or1);margin-bottom:1.2rem;animation:fu .7s ease both}
+.h-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.92;color:var(--white);margin-bottom:1.8rem;animation:fu .7s .14s ease both}
+.h-h1 em{font-style:normal;color:var(--or1);display:block}
+.h-sub{font-size:1.02rem;font-weight:300;color:var(--sv1);max-width:460px;line-height:1.75;margin-bottom:3rem;animation:fu .7s .28s ease both}
+.hbtns{display:flex;gap:1rem;flex-wrap:wrap;animation:fu .7s .42s ease both}
+.bp{background:var(--or1);color:var(--white);padding:.9rem 2.2rem;border-radius:4px;font-weight:700;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;transition:background .2s,transform .2s;display:inline-block}
+.bp:hover{background:var(--or2);transform:translateY(-2px)}
+.bs{border:2px solid var(--sv3);color:var(--sv1);padding:.9rem 2.2rem;border-radius:4px;font-weight:700;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;transition:border-color .2s,color .2s;display:inline-block}
+.bs:hover{border-color:var(--or1);color:var(--or2)}
+.hstats{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:4rem;padding-top:2rem;border-top:1px solid #22262a;animation:fu .7s .56s ease both}
+.stn{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:var(--white);line-height:1}
+.stl{font-size:.7rem;color:var(--sv3);letter-spacing:.13em;text-transform:uppercase;margin-top:.3rem}
+.hero-right{position:relative;z-index:2;animation:fu .7s .3s ease both}
+.hero-img-wrap{position:relative}
+.hero-img-wrap img{border-radius:12px;height:520px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero-badge{position:absolute;bottom:-20px;left:-20px;background:linear-gradient(135deg,var(--or1),var(--or2));color:var(--white);border-radius:10px;padding:1.2rem 1.5rem;box-shadow:0 12px 32px rgba(232,89,58,.4)}
+.hero-badge strong{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;display:block;line-height:1}
+.hero-badge span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+@media(max-width:900px){#hero{grid-template-columns:1fr;padding-top:110px}.hero-right{display:none}}
+@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* MARQUEE */
+.mbar{background:linear-gradient(90deg,var(--or1),var(--or2),var(--or1));overflow:hidden;padding:13px 0;white-space:nowrap}
+.mtrack{display:inline-block;animation:tick 36s linear infinite}
+.mtrack span{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.22em;color:rgba(255,255,255,.92);margin:0 2rem}
+.mtrack span::before{content:'◆ ';font-size:.5rem;vertical-align:middle;margin-right:.3rem;opacity:.6}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SHARED */
+.stag{font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--or1);margin-bottom:.8rem}
+.sh2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);line-height:1;color:var(--ink);margin-bottom:1rem}
+.sintro{font-size:.97rem;font-weight:300;color:var(--sv3);max-width:600px;line-height:1.75;margin-bottom:2.5rem}
+.sline{height:2px;background:linear-gradient(90deg,var(--or1),var(--sv2),transparent);margin:2rem 0}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.section-pad{padding:90px 5vw}
+
+/* SERVICE CATEGORY HEADER */
+.cat-header{
+  display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;margin-top:3.5rem;
+  padding-bottom:.8rem;border-bottom:3px solid var(--or1);
+}
+.cat-header:first-of-type{margin-top:0}
+.cat-header h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.05em;color:var(--ink)}
+.cat-num{
+  background:var(--or1);color:var(--white);
+  font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.1em;
+  padding:.3rem .8rem;border-radius:3px;white-space:nowrap
+}
+
+/* SERVICE CARDS */
+.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem}
+.sc{background:var(--white);border-radius:10px;overflow:hidden;border:2px solid var(--sv2);transition:border-color .25s,transform .25s,box-shadow .25s}
+.sc:hover{border-color:var(--or1);transform:translateY(-5px);box-shadow:0 16px 48px rgba(232,89,58,.12)}
+.sc-img{height:190px;overflow:hidden;position:relative}
+.sc-img img{height:100%;transition:transform .4s ease}
+.sc:hover .sc-img img{transform:scale(1.06)}
+.sc-pill{position:absolute;top:12px;left:12px;background:var(--or1);color:var(--white);font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .75rem;border-radius:20px}
+.sc-body{padding:1.4rem}
+.sc-body h4{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.45rem}
+.sc-body p{font-size:.85rem;color:var(--sv3);line-height:1.62;font-weight:300;margin-bottom:1rem}
+.sc-cta{display:inline-flex;align-items:center;gap:.45rem;background:var(--or3);border:1.5px solid var(--or1);color:var(--or1);border-radius:4px;padding:.38rem 1rem;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .2s,color .2s}
+.sc-cta:hover{background:var(--or1);color:var(--white)}
+
+/* HIGHLIGHTS */
+#highlights{background:var(--ink);padding:90px 5vw}
+.hlgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.4rem;margin-top:2rem}
+.hlcard{background:#1e2226;border:1px solid #2a2f35;border-radius:10px;padding:1.8rem;transition:border-color .2s,transform .2s}
+.hlcard:hover{border-color:var(--or1);transform:translateY(-3px)}
+.hl-ico{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,var(--or1),var(--or2));display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.hl-ico svg{width:22px;height:22px;fill:var(--white)}
+.hlcard h3{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.04em;color:var(--white);margin-bottom:.5rem}
+.hlcard p{font-size:.85rem;color:var(--sv3);line-height:1.6;font-weight:300}
+
+/* BULK BAND */
+#bulk{background:linear-gradient(135deg,var(--or1) 0%,var(--or2) 100%);padding:80px 5vw;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem}
+@media(max-width:680px){#bulk{grid-template-columns:1fr}}
+.bulk-left h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);color:var(--white);line-height:1;margin-bottom:.8rem}
+.bulk-left p{color:rgba(255,255,255,.85);font-size:1rem;font-weight:300;line-height:1.7;max-width:520px}
+.bulk-perks{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.bulk-perk{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:var(--white);border-radius:20px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;letter-spacing:.06em}
+.bwh{background:var(--white);color:var(--or1);padding:1.1rem 2.6rem;border-radius:4px;font-weight:700;font-size:.9rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;transition:transform .2s,box-shadow .2s;flex-shrink:0;display:inline-block}
+.bwh:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.2)}
+
+/* HOW IT WORKS */
+#how{background:var(--bg);padding:90px 5vw}
+.how-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-top:2.5rem}
+.step{padding:2rem 1.8rem;border-left:3px solid var(--sv2)}
+.step:first-child{border-left-color:var(--or1)}
+.stepn{font-family:'Bebas Neue',sans-serif;font-size:3.8rem;line-height:1;margin-bottom:.5rem;color:var(--sv2)}
+.step h3{font-size:.88rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);margin-bottom:.6rem}
+.step p{font-size:.87rem;color:var(--sv3);line-height:1.65;font-weight:300}
+
+/* FILE TYPES */
+#filetypes{background:var(--ink);padding:90px 5vw}
+.ftg{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1rem}
+.ftb{background:#1c1f22;border:1px solid #2d3338;border-radius:5px;padding:.55rem 1.15rem;font-size:.82rem;font-weight:600;letter-spacing:.08em;color:var(--sv1);transition:border-color .2s,color .2s}
+.ftb:hover,.ftb.hi{border-color:var(--or1);color:var(--or2)}
+
+/* TURNAROUND */
+#turnaround{background:var(--white);padding:90px 5vw}
+.tagrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.2rem;margin-top:2rem}
+.tac{background:var(--bg);border:2px solid var(--sv2);border-radius:10px;padding:2rem 1.5rem;text-align:center;transition:border-color .25s,transform .25s}
+.tac:hover{border-color:var(--or1);transform:translateY(-4px)}
+.tan{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;background:linear-gradient(135deg,var(--or1),var(--or2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.tal{font-size:.73rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sv1);margin-top:.25rem}
+.tad{font-size:.85rem;color:var(--sv3);margin-top:.9rem;line-height:1.55;font-weight:300}
+
+/* PRICING CTA */
+#pricecta{background:linear-gradient(135deg,var(--or1),var(--or2));padding:72px 5vw;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+#pricecta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);color:var(--white);line-height:1}
+#pricecta p{color:rgba(255,255,255,.82);margin-top:.7rem;font-size:.97rem;font-weight:300;max-width:500px}
+.btn-wh{background:var(--white);color:var(--or1);padding:1rem 2.4rem;border-radius:4px;font-weight:700;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;transition:transform .2s,box-shadow .2s;display:inline-block}
+.btn-wh:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.2)}
+
+/* CONTACT */
+#contact{background:var(--white);padding:90px 5vw}
+.cwrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+@media(max-width:720px){.cwrap{grid-template-columns:1fr;gap:3rem}}
+.cinfo h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.04em;color:var(--ink);margin-bottom:1.4rem}
+.crow{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.4rem}
+.cico{width:42px;height:42px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,var(--or1),var(--or2));display:flex;align-items:center;justify-content:center}
+.cico svg{width:18px;height:18px;fill:var(--white)}
+.ctxt strong{display:block;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--or1);margin-bottom:.25rem}
+.ctxt span,.ctxt a{font-size:.95rem;color:var(--sv3);font-weight:400}
+.ctxt a{color:var(--or1);font-weight:600}
+.htbl{margin-top:.8rem;width:100%;border-collapse:collapse}
+.htbl td{padding:.38rem 0;font-size:.87rem;color:var(--sv3);font-weight:300;border-bottom:1px solid var(--sv2)}
+.htbl td:first-child{font-weight:600;color:var(--ink);width:140px}
+.bulk-box{margin-top:2rem;background:var(--or3);border:2px solid var(--or1);border-radius:10px;padding:1.4rem}
+.bulk-box strong{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--or1);display:block;margin-bottom:.4rem}
+.bulk-box p{font-size:.88rem;color:var(--sv3);line-height:1.6;font-weight:300}
+/* form */
+.cform h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.04em;color:var(--ink);margin-bottom:1.4rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:460px){.frow{grid-template-columns:1fr}}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-size:.73rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sv3);margin-bottom:.4rem}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--bg);border:2px solid var(--sv2);border-radius:4px;padding:.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:.9rem;color:var(--ink);outline:none;transition:border-color .2s,background .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--or1);background:var(--white)}
+.fg textarea{resize:vertical;min-height:120px}
+.fsub{background:linear-gradient(135deg,var(--or1),var(--or2));color:var(--white);border:none;cursor:pointer;padding:.95rem 2.4rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s,transform .2s;width:100%;margin-top:.5rem}
+.fsub:hover{opacity:.9;transform:translateY(-2px)}
+.fsuccess{display:none;background:var(--or3);border:2px solid var(--or1);border-radius:6px;padding:1.2rem;text-align:center;color:var(--or1);font-weight:600;font-size:.95rem;margin-top:1rem}
+.fsuccess.show{display:block}
+
+/* FOOTER */
+footer{background:var(--ink);padding:60px 5vw 30px;border-top:3px solid var(--or1)}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid #222}
+@media(max-width:800px){.ftop{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:460px){.ftop{grid-template-columns:1fr}}
+.fbrand .logo{font-size:1.6rem;margin-bottom:1rem}
+.fbrand p{font-size:.85rem;font-weight:300;color:var(--sv3);line-height:1.7;max-width:270px}
+.fcol h4{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.1em;color:var(--sv2);margin-bottom:1rem}
+.fcol ul{list-style:none}
+.fcol ul li{margin-bottom:.65rem}
+.fcol ul a{font-size:.85rem;color:var(--sv3);font-weight:300;transition:color .2s}
+.fcol ul a:hover{color:var(--or2)}
+.fbot{display:flex;align-items:center;justify-content:space-between;padding-top:1.8rem;flex-wrap:wrap;gap:1rem}
+.fbot p{font-size:.78rem;color:#444;font-weight:300}
+.fbot a{color:var(--sv3);transition:color .2s}
+.fbot a:hover{color:var(--or2)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Parhap <span>Printing</span> LLC</div>
+  <ul class="navul">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#highlights">Why Us</a></li>
+    <li><a href="#bulk">Bulk Orders</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#contact" class="navcta">Get a Quote</a></li>
+  </ul>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#highlights" onclick="toggleMenu()">Why Us</a>
+  <a href="#bulk" onclick="toggleMenu()">Bulk Orders</a>
+  <a href="#how" onclick="toggleMenu()">How It Works</a>
+  <a href="#contact" onclick="toggleMenu()">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="h-tag">Professional Print Services &nbsp;·&nbsp; Parhap Printing LLC</p>
+    <h1 class="h-h1">Your Vision,<em>Perfectly Printed.</em></h1>
+    <p class="h-sub">From document printing and business cards to signs, banners, decals, and promotional products — we bring your ideas to life with sharp quality and fast turnaround.</p>
+    <div class="hbtns">
+      <a href="#contact" class="bp">Get a Free Quote</a>
+      <a href="#services" class="bs">See All Services</a>
+    </div>
+    <div class="hstats">
+      <div><div class="stn">500+</div><div class="stl">Happy Clients</div></div>
+      <div><div class="stn">24hr</div><div class="stl">Rush Available</div></div>
+      <div><div class="stn">100%</div><div class="stl">Satisfaction</div></div>
+      <div><div class="stn">5</div><div class="stl">Service Categories</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=800&q=80" alt="Professional printing press" style="border-radius:12px;height:520px;object-fit:cover"/>
+      <div class="hero-badge">
+        <strong>Fast Turnaround</strong>
+        <span>Same-Day Rush Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mbar" aria-hidden="true">
+  <div class="mtrack">
+    <span>Document Printing</span><span>Copies</span><span>Forms</span>
+    <span>Presentations</span><span>Booklets</span><span>Business Cards</span>
+    <span>Flyers</span><span>Brochures</span><span>Postcards</span><span>Rack Cards</span>
+    <span>Signs</span><span>Posters</span><span>Banners</span><span>Decals</span>
+    <span>Beach Flags</span><span>Yard Signs</span><span>Promotional Products</span>
+    <span>Document Printing</span><span>Copies</span><span>Forms</span>
+    <span>Presentations</span><span>Booklets</span><span>Business Cards</span>
+    <span>Flyers</span><span>Brochures</span><span>Postcards</span><span>Rack Cards</span>
+    <span>Signs</span><span>Posters</span><span>Banners</span><span>Decals</span>
+    <span>Beach Flags</span><span>Yard Signs</span><span>Promotional Products</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="section-pad" style="background:var(--white)">
+  <p class="stag">Everything We Offer</p>
+  <h2 class="sh2">Our Print Services</h2>
+  <p class="sintro">We cover all of your printing needs under one roof. No pricing listed — every job is unique. <strong style="color:var(--or1)">Contact us for a fast, free quote on any service below.</strong></p>
+
+  <!-- ── CATEGORY 1: DOCUMENT PRINTING ── -->
+  <div class="cat-header">
+    <div class="cat-num">01</div>
+    <h3>Document Printing</h3>
+  </div>
+  <div class="sgrid">
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1568667256549-094345857637?w=600&q=80" alt="Copies and Documents"/>
+        <div class="sc-pill">Most Popular</div>
+      </div>
+      <div class="sc-body">
+        <h4>Copies &amp; Documents</h4>
+        <p>Black-and-white and full-color copies of any document. Fast, affordable, and available in high volume. Perfect for offices, schools, and events.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Forms Printing"/>
+      </div>
+      <div class="sc-body">
+        <h4>Forms</h4>
+        <p>Custom or standard business forms, multi-part carbonless forms, order forms, invoices, and any paperwork your business needs in quantity.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Presentations"/>
+      </div>
+      <div class="sc-body">
+        <h4>Presentations</h4>
+        <p>Print your PowerPoint slides, reports, and pitch decks in vibrant color or crisp black-and-white. Options for binding and professional covers included.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?w=600&q=80" alt="Booklets"/>
+      </div>
+      <div class="sc-body">
+        <h4>Booklets</h4>
+        <p>Saddle-stitched or perfect-bound booklets for manuals, programs, catalogs, and training materials. Available in multiple sizes and paper stocks.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── CATEGORY 2: BUSINESS CARDS ── -->
+  <div class="cat-header">
+    <div class="cat-num">02</div>
+    <h3>Business Cards</h3>
+  </div>
+  <div class="sgrid">
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&q=80" alt="Standard Business Cards"/>
+        <div class="sc-pill">Best Seller</div>
+      </div>
+      <div class="sc-body">
+        <h4>Standard Business Cards</h4>
+        <p>Classic 3.5×2" cards printed on premium card stock. Full-color, single or double-sided, with your choice of matte or gloss finish.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Premium Business Cards"/>
+      </div>
+      <div class="sc-body">
+        <h4>Premium &amp; Specialty Cards</h4>
+        <p>Upgrade to thick card stock, spot-UV coating, rounded corners, folded cards, or unique shapes. Make a lasting first impression every time.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── CATEGORY 3: MARKETING MATERIALS ── -->
+  <div class="cat-header">
+    <div class="cat-num">03</div>
+    <h3>Marketing Materials</h3>
+  </div>
+  <div class="sgrid">
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=600&q=80" alt="Flyers"/>
+      </div>
+      <div class="sc-body">
+        <h4>Flyers</h4>
+        <p>Bright, attention-grabbing flyers for events, promotions, grand openings, and announcements. Single or double-sided in multiple sizes.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&q=80" alt="Brochures"/>
+      </div>
+      <div class="sc-body">
+        <h4>Brochures</h4>
+        <p>Tri-fold, bi-fold, and z-fold brochures for marketing, menus, and service guides. Printed on gloss or matte paper in full color.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1586880244386-8b3e34c8382c?w=600&q=80" alt="Postcards"/>
+      </div>
+      <div class="sc-body">
+        <h4>Postcards</h4>
+        <p>Direct mail postcards, promotional cards, and announcements in 4×6, 5×7, 6×9, and custom sizes. High-quality full-color printing both sides.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Rack Cards"/>
+      </div>
+      <div class="sc-body">
+        <h4>Rack Cards</h4>
+        <p>Standard 4×9" rack cards for hotel lobbies, waiting rooms, tourist spots, and retail displays. Durable, gloss-coated and ready for high-traffic areas.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── CATEGORY 4: SIGNS, BANNERS & DECALS ── -->
+  <div class="cat-header">
+    <div class="cat-num">04</div>
+    <h3>Signs, Banners &amp; Decals</h3>
+  </div>
+  <div class="sgrid">
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80" alt="Signs"/>
+        <div class="sc-pill">Large Format</div>
+      </div>
+      <div class="sc-body">
+        <h4>Signs</h4>
+        <p>Indoor and outdoor rigid signs on foam board, coroplast, aluminum, and PVC. Perfect for storefronts, offices, real estate, and events in any size.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="Posters"/>
+      </div>
+      <div class="sc-body">
+        <h4>Posters</h4>
+        <p>Vivid full-color posters for advertising, events, artwork, and décor. Sizes from 11×17 up to large format on a variety of paper stocks and finishes.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80" alt="Banners"/>
+        <div class="sc-pill">Large Format</div>
+      </div>
+      <div class="sc-body">
+        <h4>Banners</h4>
+        <p>Custom vinyl banners, retractable banners, and step-and-repeat banners in a variety of sizes for trade shows, storefronts, and outdoor advertising.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=600&q=80" alt="Decals"/>
+      </div>
+      <div class="sc-body">
+        <h4>Decals</h4>
+        <p>Custom vinyl decals for vehicles, windows, walls, and equipment. Die-cut to any shape, weatherproof, and printed in vibrant full color.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1620735692151-26a7e0748429?w=600&q=80" alt="Beach Flags"/>
+      </div>
+      <div class="sc-body">
+        <h4>Beach Flags</h4>
+        <p>Eye-catching feather and teardrop beach flags that grab attention at events, trade shows, grand openings, and outdoor venues. Durable and reusable.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Yard Signs"/>
+      </div>
+      <div class="sc-body">
+        <h4>Yard Signs</h4>
+        <p>Corrugated plastic yard signs with wire stakes for political campaigns, real estate, events, and business advertising. Weather-resistant and affordable.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── CATEGORY 5: PROMOTIONAL PRODUCTS ── -->
+  <div class="cat-header">
+    <div class="cat-num">05</div>
+    <h3>Promotional Products</h3>
+  </div>
+  <div class="sgrid">
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b?w=600&q=80" alt="Promotional Products" onerror="this.src='https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80'"/>
+        <div class="sc-pill">Custom Branded</div>
+      </div>
+      <div class="sc-body">
+        <h4>Branded Merchandise</h4>
+        <p>Pens, mugs, tote bags, apparel, keychains, and hundreds more custom branded items. Perfect for trade shows, corporate gifts, and giveaways.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="Apparel Printing"/>
+      </div>
+      <div class="sc-body">
+        <h4>Apparel &amp; T-Shirts</h4>
+        <p>Custom printed t-shirts, polos, hats, and uniforms with your logo or design. Great for company teams, events, schools, and sports groups.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+    <div class="sc reveal">
+      <div class="sc-img">
+        <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=600&q=80" alt="Calendars"/>
+      </div>
+      <div class="sc-body">
+        <h4>Calendars</h4>
+        <p>Custom wall and desk calendars with your photos and branding. A year-long reminder of your business on every customer's desk or wall.</p>
+        <a href="#contact" class="sc-cta">Contact Us for Pricing →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <p class="stag" style="color:var(--or1)">Why Choose Us</p>
+  <h2 class="sh2" style="color:var(--white)">What Sets Parhap Printing Apart</h2>
+  <p class="sintro">We're committed to quality, speed, and personal service. Here's what you can count on every time.</p>
+  <div class="hlgrid">
+    <div class="hlcard reveal">
+      <div class="hl-ico"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+      <h3>Premium Quality</h3>
+      <p>Professional-grade equipment and premium stocks ensure every print job looks its absolute best.</p>
+    </div>
+    <div class="hlcard reveal">
+      <div class="hl-ico"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg></div>
+      <h3>Fast Turnaround</h3>
+      <p>Same-day rush to standard 2–3 day delivery. We work around your deadlines.</p>
+    </div>
+    <div class="hlcard reveal">
+      <div class="hl-ico"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
+      <h3>Free File Check</h3>
+      <p>We review every file for resolution, bleed, and color mode before printing — completely free.</p>
+    </div>
+    <div class="hlcard reveal">
+      <div class="hl-ico"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+      <h3>Personal Service</h3>
+      <p>You deal directly with Parthil — no call centers, no runaround, just friendly expert help.</p>
+    </div>
+    <div class="hlcard reveal">
+      <div class="hl-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+      <h3>Proof Before Print</h3>
+      <p>A digital proof is sent for your approval before any production. Zero surprises, total confidence.</p>
+    </div>
+    <div class="hlcard reveal">
+      <div class="hl-ico"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+      <h3>Satisfaction Guaranteed</h3>
+      <p>If your order isn't right, we make it right. Your satisfaction is guaranteed on every job.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BULK BAND -->
+<section id="bulk">
+  <div class="bulk-left">
+    <h2>Big Order? Even Better Prices.</h2>
+    <p>Planning a large print run for your business, event, or campaign? The more you print, the more you save. We offer special bulk pricing and custom quotes for high-volume orders. Call or email Parthil directly and let's talk numbers.</p>
+    <div class="bulk-perks">
+      <div class="bulk-perk">✔ Volume Discounts</div>
+      <div class="bulk-perk">✔ Custom Quotes</div>
+      <div class="bulk-perk">✔ Priority Production</div>
+      <div class="bulk-perk">✔ Dedicated Support</div>
+      <div class="bulk-perk">✔ Corporate Accounts Welcome</div>
+    </div>
+  </div>
+  <a href="#contact" class="bwh">Ask About Bulk Pricing</a>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <p class="stag">The Process</p>
+  <h2 class="sh2">How It Works</h2>
+  <p class="sintro">Getting from idea to in-hand is simple. We walk you through every step so your print job comes out exactly how you imagined.</p>
+  <div class="how-grid">
+    <div class="step reveal">
+      <div class="stepn">01</div>
+      <h3>Submit Your Files</h3>
+      <p>Email your artwork or drop off a USB/CD. We accept PDF, AI, EPS, Word, PowerPoint, TIFF, PNG, and more.</p>
+    </div>
+    <div class="step reveal">
+      <div class="stepn">02</div>
+      <h3>Get a Quote</h3>
+      <p>We provide a fast, accurate, no-obligation quote. Just call or email with your specs and we'll get back to you quickly.</p>
+    </div>
+    <div class="step reveal">
+      <div class="stepn">03</div>
+      <h3>Approve Your Proof</h3>
+      <p>We send a digital proof before production begins. Once you approve, we move straight to printing — no surprises.</p>
+    </div>
+    <div class="step reveal">
+      <div class="stepn">04</div>
+      <h3>Pick Up or Ship</h3>
+      <p>Pick up your completed order or have it shipped. Rush and same-day options available on select products.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FILE TYPES -->
+<section id="filetypes" style="background:var(--ink);padding:90px 5vw">
+  <p class="stag">Accepted Formats</p>
+  <h2 class="sh2" style="color:var(--white)">We Accept These File Types</h2>
+  <p class="sintro" style="color:var(--sv3)">Submit files at 300 DPI or higher with bleed marks for best results. Files can be sent by email, CD, or USB drive. Not sure if your file is ready? Send it and we'll check it free.</p>
+  <div class="ftg">
+    <div class="ftb hi">PDF ★ Best</div>
+    <div class="ftb hi">AI (Illustrator)</div>
+    <div class="ftb hi">EPS</div>
+    <div class="ftb hi">PNG (300 DPI+)</div>
+    <div class="ftb hi">TIFF</div>
+    <div class="ftb">PSD (Photoshop)</div>
+    <div class="ftb">INDD (InDesign)</div>
+    <div class="ftb">JPEG / JPG</div>
+    <div class="ftb">SVG</div>
+    <div class="ftb">DOCX (Word)</div>
+    <div class="ftb">XLSX (Excel)</div>
+    <div class="ftb">PPTX (PowerPoint)</div>
+    <div class="ftb">PUB (Publisher)</div>
+    <div class="ftb">CDR (CorelDRAW)</div>
+  </div>
+</section>
+
+<!-- TURNAROUND -->
+<section id="turnaround">
+  <p class="stag">Speed Options</p>
+  <h2 class="sh2">Turnaround Times</h2>
+  <p class="sintro">Completion times vary by job complexity. Our goal is every job done within 72 hours — and usually much faster.</p>
+  <div class="tagrid">
+    <div class="tac reveal">
+      <div class="tan">Same Day</div>
+      <div class="tal">Rush Service</div>
+      <div class="tad">Order by 10 AM for same-day pickup on select products. Call ahead to confirm availability.</div>
+    </div>
+    <div class="tac reveal">
+      <div class="tan">24 Hours</div>
+      <div class="tal">Next Day</div>
+      <div class="tad">Order by end of business and pick up the following day on most standard products.</div>
+    </div>
+    <div class="tac reveal">
+      <div class="tan">2–3 Days</div>
+      <div class="tal">Standard</div>
+      <div class="tad">Our most popular option. File must be submitted and approved before production begins.</div>
+    </div>
+    <div class="tac reveal">
+      <div class="tan">5–7 Days</div>
+      <div class="tal">Economy</div>
+      <div class="tad">Best for large or complex orders that need extra prep, finishing, or binding time.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING CTA -->
+<div id="pricecta">
+  <div>
+    <h2>No Prices Listed — That's On Purpose.</h2>
+    <p>Every print job is different. Contact us directly for a fast, accurate, no-obligation quote tailored exactly to your project and quantity.</p>
+  </div>
+  <a href="#contact" class="btn-wh">Get My Free Quote</a>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="stag">Get In Touch</p>
+  <h2 class="sh2">Contact Parhap Printing</h2>
+  <div class="sline"></div>
+  <div class="cwrap">
+
+    <div class="cinfo">
+      <h3>Call or Email Us Directly</h3>
+
+      <div class="crow">
+        <div class="cico"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/></svg></div>
+        <div class="ctxt">
+          <strong>Phone</strong>
+          <span><a href="tel:+13347812038">334-781-2038</a></span>
+        </div>
+      </div>
+
+      <div class="crow">
+        <div class="cico"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div class="ctxt">
+          <strong>Email</strong>
+          <span><a href="mailto:parthilpatel@aol.com">parthilpatel@aol.com</a></span>
+        </div>
+      </div>
+
+      <div class="crow">
+        <div class="cico"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+        <div class="ctxt">
+          <strong>Contact Person</strong>
+          <span>Parthil Patel</span>
+        </div>
+      </div>
+
+      <div class="sline" style="margin:1.5rem 0 1rem"></div>
+      <strong style="font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--or1)">Business Hours</strong>
+      <table class="htbl">
+        <tr><td>Monday – Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+        <tr><td>Saturday</td><td>9:00 AM – 4:00 PM</td></tr>
+        <tr><td>Sunday</td><td>Closed</td></tr>
+      </table>
+
+      <div class="bulk-box">
+        <strong>📦 Ordering a Big Batch?</strong>
+        <p>Ask about our <strong style="color:var(--ink)">bulk order discounts</strong>. The more you print, the more you save. Call or email Parthil directly for a custom volume quote.</p>
+      </div>
+    </div>
+
+    <div class="cform">
+      <h3>Request a Free Quote</h3>
+      <div id="qform">
+        <div class="frow">
+          <div class="fg"><label>First Name *</label><input type="text" id="fn" placeholder="John"/></div>
+          <div class="fg"><label>Last Name *</label><input type="text" id="ln" placeholder="Smith"/></div>
+        </div>
+        <div class="fg"><label>Email Address *</label><input type="email" id="em" placeholder="john@example.com"/></div>
+        <div class="fg"><label>Phone Number</label><input type="tel" id="ph" placeholder="(000) 000-0000"/></div>
+        <div class="fg">
+          <label>Service Needed</label>
+          <select id="sv">
+            <option value="">— Select a service —</option>
+            <optgroup label="Document Printing">
+              <option>Copies &amp; Documents</option>
+              <option>Forms</option>
+              <option>Presentations</option>
+              <option>Booklets</option>
+            </optgroup>
+            <optgroup label="Business Cards">
+              <option>Standard Business Cards</option>
+              <option>Premium / Specialty Cards</option>
+            </optgroup>
+            <optgroup label="Marketing Materials">
+              <option>Flyers</option>
+              <option>Brochures</option>
+              <option>Postcards</option>
+              <option>Rack Cards</option>
+            </optgroup>
+            <optgroup label="Signs, Banners &amp; Decals">
+              <option>Signs</option>
+              <option>Posters</option>
+              <option>Banners</option>
+              <option>Decals</option>
+              <option>Beach Flags</option>
+              <option>Yard Signs</option>
+            </optgroup>
+            <optgroup label="Promotional Products">
+              <option>Branded Merchandise</option>
+              <option>Apparel &amp; T-Shirts</option>
+              <option>Calendars</option>
+            </optgroup>
+            <option>Bulk / Volume Order</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="fg"><label>Project Details</label><textarea id="dt" placeholder="Tell us about your project — quantity, size, deadline, any special requirements..."></textarea></div>
+        <button class="fsub" onclick="submitForm()">Send My Quote Request →</button>
+        <div class="fsuccess" id="fsuccess">✅ Thank you! We received your request and Parthil will be in touch within 1 business hour.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ftop">
+    <div class="fbrand">
+      <div class="logo">Parhap <span>Printing</span> LLC</div>
+      <p>Your professional printing partner. High-quality prints, fast turnaround, and personal service — every order, every time.</p>
+    </div>
+    <div class="fcol">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Document Printing</a></li>
+        <li><a href="#services">Business Cards</a></li>
+        <li><a href="#services">Flyers &amp; Brochures</a></li>
+        <li><a href="#services">Postcards &amp; Rack Cards</a></li>
+        <li><a href="#services">Signs &amp; Banners</a></li>
+        <li><a href="#services">Decals &amp; Yard Signs</a></li>
+        <li><a href="#services">Promotional Products</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#highlights">Why Choose Us</a></li>
+        <li><a href="#bulk">Bulk Orders</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#turnaround">Turnaround Times</a></li>
+        <li><a href="#filetypes">File Formats</a></li>
+        <li><a href="#contact">Get a Quote</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+13347812038">334-781-2038</a></li>
+        <li><a href="mailto:parthilpatel@aol.com">parthilpatel@aol.com</a></li>
+        <li style="color:var(--sv3);font-size:.85rem;font-weight:300;margin-top:.5rem">Parthil Patel</li>
+      </ul>
+      <p style="font-size:.82rem;color:var(--sv3);font-weight:300;margin-top:.8rem;line-height:1.6">Mon–Fri: 8AM–6PM<br>Sat: 9AM–4PM<br>Sun: Closed</p>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>&copy; <span id="yr"></span> Parhap Printing LLC. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+  document.addEventListener('click',function(e){
+    const m=document.getElementById('mmenu');
+    if(m.classList.contains('open')&&!m.contains(e.target)&&!e.target.closest('.burger'))m.classList.remove('open');
+  });
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+  const secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',()=>{
+    let cur='';
+    secs.forEach(s=>{if(window.scrollY>=s.offsetTop-90)cur=s.id});
+    document.querySelectorAll('.navul a').forEach(a=>{
+      a.style.color=a.getAttribute('href')==='#'+cur?'var(--or2)':'';
+    });
+  });
+  function submitForm(){
+    const fn=document.getElementById('fn').value.trim();
+    const em=document.getElementById('em').value.trim();
+    if(!fn||!em){alert('Please fill in at least your name and email address.');return;}
+    // TO GO LIVE: replace with fetch() to Formspree/EmailJS
+    // fetch('https://formspree.io/f/YOUR_ID',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:fn,email:em})})
+    document.getElementById('fsuccess').classList.add('show');
+    document.getElementById('qform').querySelectorAll('input,select,textarea').forEach(f=>f.value='');
+  }
+</script>
+</body>
+</html>
