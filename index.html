@@ -710,7 +710,7 @@ footer{background:var(--ink);padding:60px 5vw 30px;border-top:3px solid var(--or
         <div class="cico"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
         <div class="ctxt">
           <strong>Email</strong>
-          <span><a href="mailto:parthilpatel@aol.com">parthilpatel@aol.com</a></span>
+          <span><a href="/cdn-cgi/l/email-protection#0f7f6e7d7b6766637f6e7b6a634f6e6063216c6062"><span class="__cf_email__" data-cfemail="b1c1d0c3c5d9d8ddc1d0c5d4ddf1d0dedd9fd2dedc">[email&#160;protected]</span></a></span>
         </div>
       </div>
 
@@ -825,7 +825,7 @@ footer{background:var(--ink);padding:60px 5vw 30px;border-top:3px solid var(--or
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+13347812038">334-781-2038</a></li>
-        <li><a href="mailto:parthilpatel@aol.com">parthilpatel@aol.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#5f2f3e2d2b3736332f3e2b3a331f3e3033713c3032"><span class="__cf_email__" data-cfemail="93e3f2e1e7fbfaffe3f2e7f6ffd3f2fcffbdf0fcfe">[email&#160;protected]</span></a></li>
         <li style="color:var(--sv3);font-size:.85rem;font-weight:300;margin-top:.5rem">Parthil Patel</li>
       </ul>
       <p style="font-size:.82rem;color:var(--sv3);font-weight:300;margin-top:.8rem;line-height:1.6">Mon–Fri: 8AM–6PM<br>Sat: 9AM–4PM<br>Sun: Closed</p>
@@ -837,7 +837,7 @@ footer{background:var(--ink);padding:60px 5vw 30px;border-top:3px solid var(--or
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.getElementById('yr').textContent = new Date().getFullYear();
   function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
   document.addEventListener('click',function(e){
@@ -856,15 +856,38 @@ footer{background:var(--ink);padding:60px 5vw 30px;border-top:3px solid var(--or
       a.style.color=a.getAttribute('href')==='#'+cur?'var(--or2)':'';
     });
   });
-  function submitForm(){
+  async function submitForm(){
     const fn=document.getElementById('fn').value.trim();
     const em=document.getElementById('em').value.trim();
     if(!fn||!em){alert('Please fill in at least your name and email address.');return;}
-    // TO GO LIVE: replace with fetch() to Formspree/EmailJS
-    // fetch('https://formspree.io/f/YOUR_ID',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:fn,email:em})})
-    document.getElementById('fsuccess').classList.add('show');
-    document.getElementById('qform').querySelectorAll('input,select,textarea').forEach(f=>f.value='');
+    const btn=document.querySelector('.fsub');
+    btn.textContent='Sending…';
+    btn.disabled=true;
+    const payload={
+      firstName:fn,
+      lastName:document.getElementById('ln').value.trim(),
+      email:em,
+      phone:document.getElementById('ph').value.trim(),
+      service:document.getElementById('sv').value,
+      details:document.getElementById('dt').value.trim()
+    };
+    try{
+      const res=await fetch('https://formspree.io/f/YOUR_FORM_ID',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      if(res.ok){
+        document.getElementById('fsuccess').style.display='block';
+        btn.style.display='none';
+      }else{
+        alert('Something went wrong. Please try again or call us directly.');
+        btn.textContent='Send My Quote Request →';
+        btn.disabled=false;
+      }
+    }catch(e){
+      alert('Network error. Please try again.');
+      btn.textContent='Send My Quote Request →';
+      btn.disabled=false;
+    }
   }
-</script>
-</body>
-</html>
